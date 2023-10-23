@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulario</title>
+    <style>
+        body {
+            background: url('https://pa1.aminoapps.com/7120/607329968b85067f64da891e22066e7815e9d143r1-500-281_hq.gif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .formulario {
+            background-color: rgba(224, 146, 226, 0.548); /* Fondo semi-transparente #d8f8e1 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px; /* Ancho del formulario */
+        }
+        .formulario input {
+            width: 100%; /* Todos los campos de entrada tendrán el mismo ancho */
+            margin-bottom: 10px;
+            padding: 8px; /* Espaciado interno */
+            box-sizing: border-box; /* Incluye el padding en el ancho total */
+        }
+        .formulario button {
+            width: 100%; /* Botón ocupará el mismo ancho que los campos de entrada */
+        }
+    </style>
+</head>
+<body>
+ <!-- Contenedor del icono del menú y su contorno blanco transparente -->
+ <div class="menu-container">
+        <!-- Icono del menú -->
+        <div class="menu-icon">
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+            <div class="menu-bar"></div>
+        </div>
+    </div>
+ <!-- Menú desplegable -->
+                <div class="menu">
+                    <ul>
+                        <li><a href="https://victordaniel123.github.io/menu/">Inicio</a></li>
+                        <li><a href="https://victordaniel123.github.io/pagina_victor/">finalizar sesion</a></li>
+                    </ul>
+                </div>
+
+
+    <div class="formulario">
+        <h1>Formulario de Información</h1>
+        <form id="miFormulario">
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" required>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" required>
+
+            <label for="carrera">Carrera:</label>
+            <input type="text" id="carrera" required>
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <label for="telefono">Número de Celular:</label>
+            <input type="tel" id="telefono" required>
+
+            <label for="semestres">Semestres:</label>
+            <input type="number" id="semestres" required>
+
+            <button type="button" onclick="mostrarInformacion()">Enviar</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarInformacion() {
+            const nombres = document.getElementById("nombres").value;
+            const apellidos = document.getElementById("apellidos").value;
+            const carrera = document.getElementById("carrera").value;
+            const correo = document.getElementById("correo").value;
+            const telefono = document.getElementById("telefono").value;
+            const semestres = document.getElementById("semestres").value;
+
+            const resultado = `Nombres: ${nombres}<br>Apellidos: ${apellidos}<br>Carrera: ${carrera}<br>Correo Electrónico: ${correo}<br>Número de Celular: ${telefono}<br>Semestres: ${semestres}`;
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+        <script src="script.js"></script>
+
+</body>
+</html>
